@@ -54,11 +54,11 @@ public class ProductController extends AbstractController {
 	  Product product  = returnedProduct.get(); 
 	  
 	  ProductEvent productCreatedEvent = new ProductEvent("One Product is retrieved", product);
-      eventPublisher.publishEvent(productCreatedEvent);
-      return ResponseEntity.ok().body(product);
+          eventPublisher.publishEvent(productCreatedEvent);
+          return ResponseEntity.ok().body(product);
 	}
-    catch(Exception e) {
-      throw new HTTP404Exception("The requested product was not found", new Date(), e);	 
+        catch(Exception e) {
+          throw new HTTP404Exception("The requested product was not found", new Date(), e);	 
     }      
    }
 
